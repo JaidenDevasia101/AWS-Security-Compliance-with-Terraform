@@ -73,6 +73,18 @@ AWS Config continuously evaluates your AWS resources against compliance rules. T
    ```powershell
      .\scripts\check.ps1 -Region us-east-1
      ```
+   Example:
+- root-account-mfa-enabled          : NON_COMPLIANT
+- cloudtrail-enabled                : COMPLIANT
+- s3-bucket-public-read-prohibited  : COMPLIANT
+- encrypted-volumes                 : COMPLIANT
+- restricted-ssh                    : NON_COMPLIANT
+
+5. **Cleanup**
+    ```powershell
+   terraform destroy -auto-approve -var "config_bucket_name=my-config-logs-<unique-id>"
+     ```
+
    
 
 
