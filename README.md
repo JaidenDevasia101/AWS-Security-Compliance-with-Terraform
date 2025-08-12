@@ -23,18 +23,6 @@ AWS Config continuously evaluates your AWS resources against compliance rules. T
   5. **Restricted SSH** (`INCOMING_SSH_DISABLED`)
 - Provides a **PowerShell script** to quickly check compliance status from the CLI.
 
----
-
-## 🗂 Project Structure
-
-aws-security-compliance-terraform/
-├─ main.tf # AWS Config + S3 + IAM + rules
-├─ providers.tf # Provider config for AWS
-├─ variables.tf # Input variables
-├─ outputs.tf # Outputs for bucket name & rule list
-└─ scripts/
-└─ check.ps1 # PowerShell compliance checker
-
 
 ---
 
