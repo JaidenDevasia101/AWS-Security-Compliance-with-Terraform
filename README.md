@@ -68,10 +68,12 @@ AWS Config continuously evaluates your AWS resources against compliance rules. T
    ```powershell
    terraform init
    terraform apply -auto-approve -var "config_bucket_name=my-config-logs-<unique-id>"
-3. **Wait**
-   Wait ~2–5 minutes for AWS Config to evaluate the rules.
-4. **Check Compliance (PowerShell)**
-   .\scripts\check.ps1 -Region us-east-1
+3. Wait ~2–5 minutes for AWS Config to evaluate the rules.
+4. Check Compliance (PowerShell)
+   ```powershell
+     .\scripts\check.ps1 -Region us-east-1
+     ```
+   
 
 
    
