@@ -46,3 +46,44 @@ aws-security-compliance-terraform/
 - **AWS CLI** installed and configured:
   ```powershell
   aws configure
+  Enter your AWS Access Key, Secret Key, Region, and output format.
+
+
+---
+
+## What This Deploys
+
+- **S3 bucket** (encrypted, versioned, correct bucket policy) for AWS Config logs.
+- **IAM role** for AWS Config (managed policy: `AWS_ConfigRole`).
+- **AWS Config**: configuration recorder + delivery channel.
+- **Managed rules**:
+  - `ROOT_ACCOUNT_MFA_ENABLED`
+  - `CLOUD_TRAIL_ENABLED`
+  - `S3_BUCKET_PUBLIC_READ_PROHIBITED`
+  - `ENCRYPTED_VOLUMES`  _(portable alternative to EBS default encryption check)_
+  - `INCOMING_SSH_DISABLED`
+
+---
+
+## Quick Start (Steps)
+
+1. **Prereqs**
+   - AWS account + permissions for S3, IAM, AWS Config.
+   - Terraform installed.
+   - AWS CLI configured:
+     ```powershell
+     aws configure
+     ```
+
+2. **Deploy**
+   From the project root:
+   ```powershell
+   terraform init
+   terraform apply -auto-approve -var "config_bucket_name=my-config-logs-<unique-id>"
+3. **Wait**
+   Wait ~2–5 minutes for AWS Config to evaluate the rules.
+4. **Check Compliance (PowerShell)**
+   .\scripts\check.ps1 -Region us-east-1
+
+
+   
