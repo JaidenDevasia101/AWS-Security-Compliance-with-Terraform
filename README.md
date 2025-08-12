@@ -87,12 +87,9 @@ AWS Config continuously evaluates your AWS resources against compliance rules. T
      ```
 
 ## Why This Project
-
-Demonstrates IaC for security: reproducible baseline with Terraform.
-
-Shows objective compliance: AWS-managed rules produce pass/fail findings.
-
-Easy to extend: add more aws_config_config_rule resources or adopt AWS conformance packs.
+- Demonstrates IaC for security: reproducible baseline with Terraform.
+- Shows objective compliance: AWS-managed rules produce pass/fail findings.
+- Easy to extend: add more aws_config_config_rule resources or adopt AWS conformance packs.
 
 
    
